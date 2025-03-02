@@ -1,0 +1,57 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #18171F;
+  color: #E6E5EA;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+}
+
+.password-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.password-card .password-card__section {
+  background-color: #24232C;
+  display: flex;
+  padding: 1rem;
+}
+.password-card .password-card__section.password-card__result #password-card__password {
+  background-color: #24232C;
+  border: none;
+  margin-right: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 18px;
+}
+.password-card .password-card__section.password-card__password-criteria {
+  flex-direction: column;
+}
+
+.password-card__form .password-card__form-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.password-card__form .password-card__form-group .password-card__range {
+  width: 100%;
+}
+.password-card__form .password-card__form-group.password-card__checkboxes {
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */

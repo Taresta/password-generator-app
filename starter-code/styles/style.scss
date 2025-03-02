@@ -1,0 +1,93 @@
+//COLORS
+$dark-grey: #24232C;
+$grey: #817D92;
+$almost-white: #E6E5EA;
+$very-dark-grey: #18171F;
+$neon-green: #A4FFAF;
+$red: #F64A4A;
+$orange: #FB7C58;
+$yellow: #F8CD65;
+
+//Typography
+$font-family: "JetBrains Mono", monospace;
+$font-weight: 700;
+$font-size-heading-large: 32px;
+$font-size-heading-medium: 24px;
+$font-size-body: 18px;
+
+
+$line-height-heading-large: 43px;
+$line-height-heading-medium: 31px;
+$line-height-body: 23px;
+
+@mixin font() {
+    font-family: $font-family;
+    font-weight: $font-weight;
+}
+
+*, 
+*::after,
+*::before {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    @include font();
+    font-size: $font-size-body;
+    background-color: $very-dark-grey;
+    color: $almost-white;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    // padding: 1rem;
+}
+
+header {
+    text-align: center;
+}
+.password-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    .password-card__section {
+        background-color: $dark-grey;
+        display:flex;
+        padding: 1rem;
+
+        &.password-card__result {
+            
+            #password-card__password {
+            
+                background-color: $dark-grey;
+                border:none;
+                margin-right: auto;
+                @include font();
+                font-size: 18px; //This is causing trouble. Tres interresant.
+            }
+
+        }
+        &.password-card__password-criteria {
+            flex-direction: column;
+
+        }
+    }
+}
+
+.password-card__form {
+
+    .password-card__form-group {
+        display:flex;
+        flex-wrap: wrap;
+
+         .password-card__range { //we can also write input[type="range"]
+            width:100%;
+         }
+
+         &.password-card__checkboxes {
+            flex-direction: column;
+         }
+    }
+}
+
