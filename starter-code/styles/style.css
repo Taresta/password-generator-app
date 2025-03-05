@@ -15,6 +15,7 @@ body {
   display: grid;
   place-content: center;
   min-height: 100vh;
+  padding: 1rem;
 }
 
 header {
@@ -27,31 +28,142 @@ header {
   gap: 1.5rem;
 }
 .password-card .password-card__section {
-  background-color: #24232C;
   display: flex;
+  background-color: #24232C;
   padding: 1rem;
 }
 .password-card .password-card__section.password-card__result #password-card__password {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  min-width: 0;
   background-color: #24232C;
   border: none;
   margin-right: auto;
-  font-family: "JetBrains Mono", monospace;
-  font-weight: 700;
-  font-size: 18px;
+  font-size: 24px;
+  width: 100%;
+}
+.password-card .password-card__section.password-card__result .password-card__copy-icon {
+  flex-shrink: 0;
 }
 .password-card .password-card__section.password-card__password-criteria {
+  display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
+.password-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .password-card__form .password-card__form-group {
   display: flex;
+  flex-direction: row;
+  gap: 1rem;
   flex-wrap: wrap;
 }
-.password-card__form .password-card__form-group .password-card__range {
+.password-card__form .password-card__form-group.password-card_length-criteria {
+  justify-content: space-between;
+}
+.password-card__form .password-card__form-group.password-card_length-criteria .password-card__range {
+  -webkit-appearance: none;
+  background: none;
+  height: 8px;
   width: 100%;
+  background: #18171F;
+  background-image: linear-gradient(#A4FFAF, #A4FFAF);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+}
+.password-card__form .password-card__form-group.password-card_length-criteria .password-card__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #E6E5EA;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.password-card__form .password-card__form-group.password-card_length-criteria .password-card__range::-webkit-slider-thumb:hover {
+  background-color: #18171F;
+  border: 0.125rem solid #A4FFAF;
+}
+.password-card__form .password-card__form-group.password-card_length-criteria .password-card__range::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #A4FFAF;
+  border-radius: 50%;
+}
+.password-card__form .password-card__form-group.password-card_length-criteria .password-card__range::-moz-range-thumb:hover {
+  background-color: #18171F;
+  border: 0.125rem solid #A4FFAF;
 }
 .password-card__form .password-card__form-group.password-card__checkboxes {
   flex-direction: column;
+}
+.password-card__form .password-card__form-group.password-card__checkboxes .password-card__label-checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.password-card__form .password-card__form-group.password-card__checkboxes .password-card__label-checkbox .password-card__input-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.25rem;
+  width: 1.25rem;
+  border: 0.125rem solid #E6E5EA;
+  background: none;
+  cursor: pointer;
+}
+.password-card__form .password-card__form-group.password-card__checkboxes .password-card__label-checkbox .password-card__input-checkbox:checked {
+  background-color: #A4FFAF;
+  border-color: #A4FFAF;
+}
+.password-card__form .password-card__form-group.password-card__checkboxes .password-card__label-checkbox .password-card__checkbox-icon {
+  position: absolute;
+  left: 0.15rem;
+  display: none;
+}
+.password-card__form .password-card__form-group.password-card__checkboxes .password-card__label-checkbox .password-card__input-checkbox:checked + .password-card__checkbox-icon {
+  display: block;
+}
+
+.password-card__password-strength {
+  display: flex;
+  justify-content: space-between;
+  background-color: #18171F;
+  padding: 0.5rem;
+}
+.password-card__password-strength .password-card__strength-label {
+  color: #817D92;
+}
+.password-card__password-strength .password-card__strength-bars {
+  display: flex;
+  gap: 0.5rem;
+}
+.password-card__password-strength .password-card__strength-bars .password-card__strength-bar {
+  width: 0.625rem;
+  height: 1.75rem;
+  border: 0.125rem solid #E6E5EA;
+}
+
+.password-card__generate-button {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  padding: 1rem 0;
+  background-color: #A4FFAF;
+  border: 0;
+}
+.password-card__generate-button:hover {
+  background-color: #18171F;
+  color: #A4FFAF;
+  box-shadow: inset 0rem 0rem 0rem 0.125rem #A4FFAF;
+}
+.password-card__generate-button:hover svg {
+  fill: #A4FFAF;
 }
 
 /*# sourceMappingURL=style.css.map */
