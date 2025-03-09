@@ -29,10 +29,11 @@ header {
 }
 .password-card .password-card__section {
   display: flex;
+  gap: 1rem;
   background-color: #24232C;
   padding: 1rem;
 }
-.password-card .password-card__section.password-card__result #password-card__password {
+.password-card .password-card__section.password-card__result .password-card__password {
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
   min-width: 0;
@@ -41,9 +42,22 @@ header {
   margin-right: auto;
   font-size: 24px;
   width: 100%;
+  color: #E6E5EA;
+  outline: none;
+}
+.password-card .password-card__section.password-card__result .password-card__copied-status {
+  color: #A4FFAF;
 }
 .password-card .password-card__section.password-card__result .password-card__copy-icon {
   flex-shrink: 0;
+  fill: #A4FFAF;
+}
+.password-card .password-card__section.password-card__result .password-card__copy-icon:hover {
+  fill: #E6E5EA;
+  cursor: pointer;
+}
+.password-card .password-card__section.password-card__result .password-card__copy-icon.password-card__copy-icon--copied {
+  cursor: pointer;
 }
 .password-card .password-card__section.password-card__password-criteria {
   display: flex;
@@ -64,6 +78,9 @@ header {
 }
 .password-card__form .password-card__form-group.password-card_length-criteria {
   justify-content: space-between;
+}
+.password-card__form .password-card__form-group.password-card_length-criteria .password-card__password-length {
+  color: #A4FFAF;
 }
 .password-card__form .password-card__form-group.password-card_length-criteria .password-card__range {
   -webkit-appearance: none;
@@ -122,6 +139,9 @@ header {
   background-color: #A4FFAF;
   border-color: #A4FFAF;
 }
+.password-card__form .password-card__form-group.password-card__checkboxes .password-card__label-checkbox .password-card__input-checkbox:hover {
+  border-color: #A4FFAF;
+}
 .password-card__form .password-card__form-group.password-card__checkboxes .password-card__label-checkbox .password-card__checkbox-icon {
   position: absolute;
   left: 0.15rem;
@@ -149,6 +169,22 @@ header {
   height: 1.75rem;
   border: 0.125rem solid #E6E5EA;
 }
+.password-card__password-strength .password-card__strength-bars .password-card__strength-bar.password-card__strength-bar--too-weak {
+  background-color: #F64A4A;
+  border-color: #F64A4A;
+}
+.password-card__password-strength .password-card__strength-bars .password-card__strength-bar.password-card__strength-bar--weak {
+  background-color: #FB7C58;
+  border-color: #FB7C58;
+}
+.password-card__password-strength .password-card__strength-bars .password-card__strength-bar.password-card__strength-bar--medium {
+  background-color: #F8CD65;
+  border-color: #F8CD65;
+}
+.password-card__password-strength .password-card__strength-bars .password-card__strength-bar.password-card__strength-bar--strong {
+  background-color: #A4FFAF;
+  border-color: #A4FFAF;
+}
 
 .password-card__generate-button {
   font-family: "JetBrains Mono", monospace;
@@ -156,6 +192,7 @@ header {
   padding: 1rem 0;
   background-color: #A4FFAF;
   border: 0;
+  cursor: pointer;
 }
 .password-card__generate-button:hover {
   background-color: #18171F;

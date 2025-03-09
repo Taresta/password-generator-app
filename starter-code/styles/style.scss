@@ -60,12 +60,13 @@ header {
     @include flex(column, 1.5rem);
     .password-card__section {
         display:flex;
+        gap:1rem;
         background-color: $dark-grey;
         padding: 1rem;
 
         &.password-card__result {
             
-            #password-card__password {
+            .password-card__password {
                 @include font();
                 min-width: 0;
                 background-color: $dark-grey;
@@ -73,14 +74,29 @@ header {
                 margin-right: auto;
                 font-size: $font-size-heading-medium; 
                 width:100%;
-
+            
                 //The problem, size of an input element increases with the increase in font-size.
                 //So, do we have to set a fixed width here? Yes, i BELIEVE SO
                 //bUT THE THING IS SETTING MAX-WIDTH DID NOT WORK, iT STILL CAUSES OVERFLOW, BUT IT IS THE WIDTH PROPERTY THAT SAVED ME
                 //The reason seems like when I set width here, the width is set i respect to the parent, but when setting max-width, the width is still being set in respect to input 
+
+                color: $almost-white;
+                outline: none; //To remove the boder that appears
+            }
+            .password-card__copied-status {
+                color: $neon-green;
             }
             .password-card__copy-icon {
                 flex-shrink: 0; //the width 100% of input is affecting it, so we made the flex-shrink 0;
+                fill : $neon-green;
+               
+                &:hover {
+                    fill: $almost-white;
+                    cursor: pointer;
+                }
+                &.password-card__copy-icon--copied {
+                    cursor: pointer;
+                }
             }
         }
         &.password-card__password-criteria {
@@ -105,7 +121,9 @@ header {
         &.password-card_length-criteria {
             
             justify-content: space-between;
-            
+            .password-card__password-length {
+                color:$neon-green;
+            }
             .password-card__range {
                     //styling the track
                     -webkit-appearance:none;
@@ -175,6 +193,9 @@ header {
                         background-color: $neon-green;
                         border-color: $neon-green;
                     }
+                    &:hover {
+                        border-color: $neon-green;
+                    }
                 }
                 .password-card__checkbox-icon{
                     position: absolute; //This child although has positioning absolute, the align-items and justify-content property still apply to it.
@@ -209,6 +230,23 @@ header {
             width:0.625rem;
             height:1.75rem;
             border: 0.125rem solid $almost-white;
+
+            &.password-card__strength-bar--too-weak {
+                background-color: $red;
+                border-color: $red;
+            }
+            &.password-card__strength-bar--weak {
+                background-color: $orange;
+                border-color: $orange;
+            }
+            &.password-card__strength-bar--medium {
+                background-color: $yellow;
+                border-color: $yellow;
+            }
+            &.password-card__strength-bar--strong {
+                background-color: $neon-green;
+                border-color: $neon-green;
+            }
         }
     }
 }
@@ -221,7 +259,7 @@ header {
     padding: 1rem 0;
     background-color: $neon-green;
     border:0;
-
+    cursor: pointer;
     &:hover {
         background-color: $very-dark-grey;
         color: $neon-green;
@@ -233,3 +271,7 @@ header {
     }
 }   
 
+//One problem that I am unable to solve is that when the copied status
+//appear, on larger screens the card grow, the only solution is absolute
+//but I do not like that for smaller screen sizes. Maybe we can leave that for now
+//But for now let us leave it.
