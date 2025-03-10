@@ -94,8 +94,8 @@ header {
 }
 .password-card__form .password-card__form-group.password-card_length-criteria .password-card__range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   background-color: #E6E5EA;
   border-radius: 50%;
   cursor: pointer;
@@ -201,6 +201,17 @@ header {
 }
 .password-card__generate-button:hover svg {
   fill: #A4FFAF;
+}
+
+@media (min-width: 425px) {
+  .password-card .password-card__section.password-card__result {
+    position: relative;
+    align-items: center;
+  }
+  .password-card .password-card__section.password-card__result .password-card__copied-status {
+    position: absolute;
+    right: 15%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

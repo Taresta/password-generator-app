@@ -140,8 +140,8 @@ header {
                     //Styling the thumb
                     &::-webkit-slider-thumb {
                         -webkit-appearance:none; //Clear browser thumb
-                        height:15px;
-                        width:15px;
+                        height:20px;
+                        width:20px;
                         background-color: $almost-white;
                         border-radius: 50%;
                         cursor: pointer;
@@ -275,3 +275,17 @@ header {
 //appear, on larger screens the card grow, the only solution is absolute
 //but I do not like that for smaller screen sizes. Maybe we can leave that for now
 //But for now let us leave it.
+@media (min-width:425px) {
+    .password-card {
+        .password-card__section {
+            &.password-card__result {
+                position: relative;
+                align-items: center;
+                .password-card__copied-status{
+                    position: absolute;
+                    right: 15%;
+                }
+            }
+        }
+    }
+}
