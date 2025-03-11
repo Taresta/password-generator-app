@@ -57,7 +57,7 @@ It was once again an amazing challenge. I made a lot of mistakes and hence learn
 
 1. SCSS
   a. First challenge I had was customizing the range and the checkboxes. Of course, I had no idea how to, and after seraching many solutions online, I finally managed to somehow get that right. It might not be perfect still, but I am satisfies with it for now. I also learnt that to override the deafult browser styles, I had to write different styles for mozilla and the other browsers, which was quite an interesting discovery.
-  ``
+  ```
   .password-card__range {
                     //styling the track
                     -webkit-appearance:none;
