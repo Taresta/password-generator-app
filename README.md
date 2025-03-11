@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./starter-code/assets/images/Screenshot%202025-03-11%20125141.jpg)
+![](./assets/images/Screenshot%202025-03-11%20125141.jpg)
 
 
 ### Links
