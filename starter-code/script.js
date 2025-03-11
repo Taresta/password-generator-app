@@ -117,6 +117,7 @@ const displayBars = {
     }
 };
 
+//This function is to handle the styles for the range
 const handleLengthDisplay = (e) => {
     const target = e.target;
     const value = (target.value - target.min) / (target.max - target.min) * 100;
@@ -125,8 +126,7 @@ const handleLengthDisplay = (e) => {
     passwordLength = parseInt(target.value);
 };
 
-range.addEventListener('input', handleLengthDisplay);
-
+//Handle the generation of the password
 const handleGenerate = () => {
     // Step A. Verify user input
     if (!isPasswordCriteriaMet(passwordLength, checkboxes, validations)) {
@@ -170,6 +170,9 @@ async function handleCopyPassword() {
         }
     }
 }
+
+//Adding the event listeners for all the DOM elements
+range.addEventListener('input', handleLengthDisplay);
 
 generateButton.addEventListener('click', handleGenerate);
 checkboxes.forEach(checkbox => {
